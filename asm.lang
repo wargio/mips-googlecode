@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Authors: Giovanni Dante Grazioli
+ Copyright (C) 2013, Giovanni Dante Grazioli (deroad) <wargio@libero.it> 
+
+ place inside /usr/share/gtksourceview*.0/language-specs/
+ 
+-->
+<!DOCTYPE language SYSTEM "language.dtd">
+<language _name="MIPS R2000/R3000 ASM" version="1.0" _section="Sources" 
+           mimetypes="text/x-c++src;text/x-c++hdr">
+	
+	<escape-char>\</escape-char>
+
+	<line-comment _name = "Line Comment" style= "Comment">
+		<start-regex>#</start-regex>
+	</line-comment>
+
+	<string _name = "String" style = "String" end-at-line-end = "TRUE">
+		<start-regex>;</start-regex>
+		<end-regex>;</end-regex>
+	</string>
+	<block-comment _name = "Character Constant" style = "String">
+		<start-regex>&quot;</start-regex>
+        	<end-regex>&quot;</end-regex>
+	</block-comment>
+
+	<pattern-item _name = "Label" style = "Preprocessor">
+		<regex>[A-Za-z_0-9]+[:]</regex>
+	</pattern-item>
+
+	<pattern-item _name = "Directive" style = "Keyword">
+		<regex>[.]+[a-z]*</regex>
+	</pattern-item>
+	<pattern-item _name = "Operators" style = "Keyword">
+		<regex>[\(\)]</regex>
+	</pattern-item>
+	<pattern-item _name = "Local Label" style = "Character">
+		<regex>[$]+[a-z]+[0-9]*</regex>
+	</pattern-item>
+
+	<keyword-list _name = "Registers" style = "Data Type" case-sensitive="TRUE">
+		<keyword>add</keyword>
+		<keyword>addi</keyword>
+		<keyword>addiu</keyword>
+		<keyword>addu</keyword>
+		<keyword>sub</keyword>
+		<keyword>subu</keyword>
+		<keyword>and</keyword>
+		<keyword>andi</keyword>
+		<keyword>nor</keyword>
+		<keyword>or</keyword>
+		<keyword>ori</keyword>
+		<keyword>xor</keyword>
+		<keyword>xori</keyword>
+		<keyword>neg</keyword>
+		<keyword>negu</keyword>
+		<keyword>sll</keyword>
+		<keyword>srl</keyword>
+		<keyword>sra</keyword>
+		<keyword>sllv</keyword>
+		<keyword>srlv</keyword>
+		<keyword>srav</keyword>
+		<keyword>slt</keyword>
+		<keyword>slti</keyword>
+		<keyword>sltiu</keyword>
+		<keyword>sltu</keyword>
+		<keyword>beq</keyword>
+		<keyword>bne</keyword>
+		<keyword>blt</keyword>
+		<keyword>bgt</keyword>
+		<keyword>ble</keyword>
+		<keyword>bge</keyword>
+		<keyword>bgez</keyword>
+		<keyword>bgtz</keyword>
+		<keyword>blez</keyword>
+		<keyword>bltz</keyword>
+		<keyword>beqz</keyword>
+		<keyword>bnez</keyword>
+		<keyword>bgeu</keyword>
+		<keyword>bgtu</keyword>
+		<keyword>bleu</keyword>
+		<keyword>bltu</keyword>
+		<keyword>j</keyword>
+		<keyword>jal</keyword>
+		<keyword>jr</keyword>
+		<keyword>jalr</keyword>
+		<keyword>move</keyword>
+		<keyword>lb</keyword>
+		<keyword>lbu</keyword>
+		<keyword>lh</keyword>
+		<keyword>lhu</keyword>
+		<keyword>lui</keyword>
+		<keyword>lw</keyword>
+		<keyword>li</keyword>
+		<keyword>la</keyword>
+		<keyword>sw</keyword>
+		<keyword>sh</keyword>
+		<keyword>sb</keyword>
+		<keyword>nop</keyword>
+		<keyword>div</keyword>
+		<keyword>divu</keyword>
+		<keyword>mul</keyword>
+		<keyword>mult</keyword>
+		<keyword>multu</keyword>
+		<keyword>mul</keyword>
+		<keyword>mulo</keyword>
+		<keyword>mulou</keyword>
+		<keyword>mfhi</keyword>
+		<keyword>mflo</keyword>
+		<keyword>mfc0</keyword>
+		<keyword>lwcl</keyword>
+		<keyword>ldcl</keyword>
+		<keyword>swcl</keyword>
+		<keyword>sdcl</keyword>
+		<keyword>add.s</keyword>
+		<keyword>div.s</keyword>
+		<keyword>mul.s</keyword>
+		<keyword>sub.s</keyword>
+		<keyword>add.d</keyword>
+		<keyword>div.d</keyword>
+		<keyword>mul.d</keyword>
+		<keyword>sub.d</keyword>
+		<keyword>bc1t</keyword>
+		<keyword>bc1f</keyword>
+		<keyword>c.eq.s</keyword>
+		<keyword>c.lt.s</keyword>
+		<keyword>c.lt.s</keyword>
+		<keyword>c.eq.d</keyword>
+		<keyword>c.lt.d</keyword>
+		<keyword>c.lt.d</keyword>
+		<keyword>syscall</keyword>
+	</keyword-list>
+
+	<pattern-item _name = "Decimal" style = "Decimal">
+		<regex>\b([1-9][0-9]*|0)([Uu]([Ll]|LL|ll)?|([Ll]|LL|ll)[Uu]?)?\b</regex>
+	</pattern-item>
+
+	<pattern-item _name = "Floating Point Number" style = "Floating Point">
+		<regex>\b([0-9]+[Ee][-]?[0-9]+|([0-9]*\.[0-9]+|[0-9]+\.)([Ee][-]?[0-9]+)?)[fFlL]?</regex>
+	</pattern-item>
+
+	<pattern-item _name = "Octal Number" style = "Base-N Integer">
+		<regex>\b0[0-7]+([Uu]([Ll]|LL|ll)?|([Ll]|LL|ll)[Uu]?)?\b</regex>
+	</pattern-item>
+
+	<pattern-item _name = "Hex Number" style = "Base-N Integer">
+		<regex>\b0[xX][0-9a-fA-F]+([Uu]([Ll]|LL|ll)?|([Ll]|LL|ll)[Uu]?)?\b</regex>
+	</pattern-item>
+
+
+</language>
